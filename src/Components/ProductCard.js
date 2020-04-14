@@ -6,7 +6,7 @@ const ProductCard = ({ product}) => {
   
   return (
     <div className="col-lg-4 col-md-6 col-12">
-        <div className="card border-0 mt-5 mx-3">
+        <div style={{backgroundColor:"black",color:"white"}} className="card  w-50 border-0 mt-5 mx-3">
         <div className="image">
           <img
             className="card-img-top img-fluid"

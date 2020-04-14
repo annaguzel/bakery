@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Route, Switch,Redirect} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Home from './Components/Home'
 import Navbar from './Components/Navbar'
 import Category from './Components/Category'
@@ -13,7 +13,7 @@ class App extends Component {
 
   render() {
     return (
-            <div>
+            <div style={{backgroundColor:"black"}}>
             <Navbar/>
             <Switch>
             

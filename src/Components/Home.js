@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 // Components
 import CategoryCard from "./CategoryCard";
+import { Jumbotron} from 'react-bootstrap';
+
 
 class Home extends Component {
 
@@ -14,9 +16,20 @@ class Home extends Component {
     ));
 
     return (
-      <div className="text-center mt-5">
-        <h3>Categories</h3>
-        <div className="row mx-4 mt-5">{categoryCards}</div>
+      <div className="text-center">
+        <Jumbotron style={{color:"white"}}>
+          <br/>
+          <br/>
+          <h1>Welcome to Wake&Bake</h1>
+          <br/>
+          <br/>
+          <br/>
+          
+  
+  
+</Jumbotron>
+        <h3 style={{color:"white"}}>Categories</h3>
+        <div className="row text-center ml-5 mt-5">{categoryCards}</div>
       </div>
     );
   }

@@ -1,10 +1,10 @@
 :root {
   --mainBlue: #2a2a72;
   --lightBlue: #009ffd;
-  --mainWhite: #f3f3f3;
+  --mainWhite: #fff;
   --mainDark: #232528;
   --mainDark: #000;
-  --mainYellow: #ffa400;
+  --mainYellow: hsl(39, 100%, 50%);
 }
 
 body {
@@ -43,3 +43,8 @@ body {
   font-size: 1.2rem;
   color: var(--mainYellow);
 }
+.jumbotron{
+  background-image: url(./images/bread.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+ }

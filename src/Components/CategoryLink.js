@@ -1,20 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import {Nav} from 'react-bootstrap';
 
 const CategoryLink = ({ category }) => (
-  <li
-    className="nav-item"
-    title={category.title}
-  >
+  <Nav.Link>
     <NavLink
       className="nav-link"
       to={`/categories/${category.id}`}
     >
 
-      <span className="nav-link-text"> {category.title}</span>
+  {category.title}
       
     </NavLink>
-  </li>
+  </Nav.Link>
+  // </li>
 );
 
 export default CategoryLink;
