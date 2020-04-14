@@ -6,10 +6,11 @@ const ProductCard = ({ product}) => {
   
   return (
     <div className="col-lg-4 col-md-6 col-12">
+        <div className="card border-0 mt-5 mx-3">
         <div className="image">
           <img
             className="card-img-top img-fluid"
-            src={"https://ayo-bakery.herokuapp.com"+ product.image}
+            src={product.image}
             alt="bread"
           />
         </div>
@@ -21,6 +22,7 @@ const ProductCard = ({ product}) => {
           </h5>
           
         </div>
+    </div>
     </div>
   );
 };

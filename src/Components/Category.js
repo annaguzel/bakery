@@ -19,7 +19,7 @@ class Category extends Component {
           ));
        return(
            <div>
-              <div className="row">{productCards}</div>
+              <div className="row mx-4">{productCards}</div>
            </div>
 
        );
