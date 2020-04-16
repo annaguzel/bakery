@@ -33,7 +33,7 @@ export const login = userData => async dispatch => {
 
 export const signup = userData => async dispatch => {
   try {
-    const res = await instance.post("/signup/", userData);
+    const res = await instance.post("/register/", userData);
     const { token } = res.data;
     dispatch(setCurrentUser(token));
   } catch (error) {

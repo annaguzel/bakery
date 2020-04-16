@@ -6,6 +6,7 @@ import Category from './Components/Category'
 import Cart from './Components/Cart'
 import Footer from './Components/Footer'
 import RegistrationForm from './Components/RegistrationForm'
+import ProductDetail from './Components/ProductDetail'
 
 
 
@@ -18,6 +19,7 @@ class App extends Component {
             <Switch>
             
                 <Route path="/categories/:categoryID" component={Category} />
+                <Route path="/detail/:productID" component={ProductDetail} />
                 <Route path="/(login|signup)" component={RegistrationForm} />
                 <Route path="/cart" component={Cart}/>
                 <Route path="/" component={Home} />

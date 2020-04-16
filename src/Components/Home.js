@@ -24,12 +24,9 @@ class Home extends Component {
           <br/>
           <br/>
           <br/>
-          
-  
-  
-</Jumbotron>
+       </Jumbotron>
         <h3 style={{color:"white"}}>Categories</h3>
-        <div className="row text-center ml-5 mt-5">{categoryCards}</div>
+        <div className="row ml-5 mt-5">{categoryCards}</div>
       </div>
     );
   }

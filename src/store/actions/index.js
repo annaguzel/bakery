@@ -4,4 +4,5 @@ export { setErrors } from "./errors";
 export {
   fetchCategories,
   fetchProducts,
+  fetchDetails,
 } from "./bakery";

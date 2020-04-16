@@ -13,6 +13,14 @@ class Category extends Component {
 
       }
 
+  componentDidUpdate(prevProps) {
+    const categoryID=this.props.match.params.categoryID;
+        if (categoryID !== prevProps.match.params.categoryID) {
+          this.props.fetchProducts(categoryID);
+          
+        }
+      }
+
       render() {
         const productCards = this.props.products.map(product => (
             <ProductCard key={product.name} product={product} />

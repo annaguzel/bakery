@@ -1,4 +1,4 @@
-import {SET_CATEGORIES,SET_PRODUCTS} from "./actionTypes";
+import {SET_CATEGORIES,SET_PRODUCTS,GET_DETAILS} from "./actionTypes";
   
   import instance from "./instance";
   
@@ -24,6 +24,21 @@ import {SET_CATEGORIES,SET_PRODUCTS} from "./actionTypes";
       dispatch({
         type: SET_PRODUCTS,
         payload: products
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  export const fetchDetails = (productID) => async dispatch => {
+    try {
+      const res = await instance.get(
+        `/product/detail/${productID}/`
+      );
+      const details = res.data;
+      dispatch({
+        type: GET_DETAILS,
+        payload: details
       });
     } catch (error) {
       console.error(error);

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import { connect } from "react-redux";
 import CategoryLink from "./CategoryLink"
 import { Navbar, Nav} from 'react-bootstrap';
+import AuthButton from './AuthButton';
 
 
   class NavBar extends Component {
@@ -18,7 +19,7 @@ import { Navbar, Nav} from 'react-bootstrap';
 
       <header>
       <Navbar style={{backgroundColor:"black",color:"white"}} expand="lg" variant="dark">
-        <Navbar.Brand ><Link to = {"/"} className="navbar-brand">AYO-Bakery</Link></Navbar.Brand>
+        <Navbar.Brand ><Link to = {"/"} className="navbar-brand">Wake&Bake</Link></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
@@ -26,6 +27,7 @@ import { Navbar, Nav} from 'react-bootstrap';
 
             </Nav>
         </Navbar.Collapse>
+        <AuthButton />
       </Navbar>
     </header>
     )

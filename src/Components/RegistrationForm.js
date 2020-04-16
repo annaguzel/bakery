@@ -26,7 +26,7 @@ class RegistrationForm extends Component {
   render() {
     const type = this.props.match.url.substring(1);
     const { errors } = this.props;
-    if (this.props.user) return <Redirect to="/home" />;
+    if (this.props.user) return <Redirect to="/" />;
     return (
       <div class="card col-8 mx-auto p-0 mt-5 bg-dark text-white text-center">
         <div class="card-img-overlay">
