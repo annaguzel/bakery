@@ -23,7 +23,7 @@ class Category extends Component {
 
       render() {
         const productCards = this.props.products.map(product => (
-            <ProductCard key={product.name} product={product} />
+            <ProductCard key={product.name+product.id} product={product} />
           ));
        return(
            <div>

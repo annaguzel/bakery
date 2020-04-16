@@ -14,6 +14,6 @@ const store = createStore(
 
 store.dispatch(checkForExpiredToken());
 store.dispatch(fetchCategories());
-store.dispatch(fetchDetails());
+
 
 export default store;
