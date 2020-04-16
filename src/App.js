@@ -8,6 +8,9 @@ import Footer from "./Components/Footer";
 import RegistrationForm from "./Components/RegistrationForm";
 import ProductDetail from "./Components/ProductDetail";
 
+/**
+ * Make Functional
+ */
 class App extends Component {
   render() {
     return (
@@ -15,6 +18,7 @@ class App extends Component {
         <Navbar />
         <Switch>
           <Route path="/categories/:categoryID" component={Category} />
+          {/* Rename to /products/:productID */}
           <Route path="/detail/:productID" component={ProductDetail} />
           <Route path="/(login|signup)" component={RegistrationForm} />
           <Route path="/cart" component={Cart} />
