@@ -5,8 +5,14 @@ import CategoryLink from "./CategoryLink";
 import { Navbar, Nav } from "react-bootstrap";
 import AuthButton from "./AuthButton";
 
+/**
+ * convert to function
+ */
 class NavBar extends Component {
   render() {
+    /**
+     * Maybe make this a drop down?
+     */
     const categoryLinks = this.props.categories.map((category) => (
       <CategoryLink key={category.title} category={category} />
     ));

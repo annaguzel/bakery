@@ -4,6 +4,9 @@ import { connect } from "react-redux";
 import CategoryCard from "./CategoryCard";
 import { Jumbotron } from "react-bootstrap";
 
+/**
+ * convert to function
+ */
 class Home extends Component {
   render() {
     const categoryCards = this.props.categories.map((category) => (
@@ -13,6 +16,7 @@ class Home extends Component {
     return (
       <div className="text-center">
         <Jumbotron style={{ color: "white" }}>
+          {/* There are better ways to center things in css */}
           <br />
           <br />
           <h1>Welcome to Wake&Bake</h1>
