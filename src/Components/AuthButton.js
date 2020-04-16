@@ -8,29 +8,35 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSignOutAlt,
   faSignInAlt,
-  faUserPlus
+  faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 const AuthButton = ({ user, logout }) => {
   let buttons = [
     <li key="loginButton" className="nav-item">
-      <Link to="/login" style={{color:"#white"}} className="nav-link">
+      <Link to="/login" style={{ color: "#white" }} className="nav-link">
         <FontAwesomeIcon icon={faSignInAlt} /> Login
       </Link>
     </li>,
     <li key="signupButton" className="nav-item">
-      <Link to="/signup" style={{color:"white"}} className="nav-link">
+      <Link to="/signup" style={{ color: "white" }} className="nav-link">
         <FontAwesomeIcon icon={faUserPlus} /> Signup
       </Link>
-    </li>
+    </li>,
   ];
 
   if (user) {
     buttons = (
       <>
-        <span style={{color:"white"}} className="nav-link shadow">{user.username}</span>
+        <span style={{ color: "white" }} className="nav-link shadow">
+          {user.username}
+        </span>
         <li className="nav-item">
-          <span style={{color:"white"}} className="nav-link" onClick={logout}>
+          <span
+            style={{ color: "white" }}
+            className="nav-link"
+            onClick={logout}
+          >
             <FontAwesomeIcon icon={faSignOutAlt} /> Logout
           </span>
         </li>
@@ -42,10 +48,10 @@ const AuthButton = ({ user, logout }) => {
 };
 
 const mapStateToProps = ({ user }) => ({
-  user
+  user,
 });
-const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => dispatch(logout()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthButton);

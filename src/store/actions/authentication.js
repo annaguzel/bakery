@@ -5,7 +5,7 @@ import { SET_CURRENT_USER } from "./actionTypes";
 import { setErrors } from "./errors";
 import decode from "jwt-decode";
 
-export const checkForExpiredToken = () => dispatch => {
+export const checkForExpiredToken = () => (dispatch) => {
   const token = localStorage.getItem("token");
 
   if (token) {
@@ -21,7 +21,7 @@ export const checkForExpiredToken = () => dispatch => {
   }
 };
 
-export const login = userData => async dispatch => {
+export const login = (userData) => async (dispatch) => {
   try {
     const res = await instance.post("/login/", userData);
     const { token } = res.data;
@@ -31,7 +31,7 @@ export const login = userData => async dispatch => {
   }
 };
 
-export const signup = userData => async dispatch => {
+export const signup = (userData) => async (dispatch) => {
   try {
     const res = await instance.post("/register/", userData);
     const { token } = res.data;
@@ -43,13 +43,13 @@ export const signup = userData => async dispatch => {
 
 export const logout = () => setCurrentUser();
 
-const setCurrentUser = token => {
+const setCurrentUser = (token) => {
   setAuthToken(token);
   const user = token ? decode(token) : null;
   return { type: SET_CURRENT_USER, payload: user };
 };
 
-const setAuthToken = token => {
+const setAuthToken = (token) => {
   if (token) {
     localStorage.setItem("token", token);
     instance.defaults.headers.Authorization = `jwt ${token}`;

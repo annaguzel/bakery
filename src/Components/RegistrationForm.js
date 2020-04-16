@@ -6,14 +6,14 @@ import { connect } from "react-redux";
 class RegistrationForm extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
   };
 
-  changeHandler = e => {
+  changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  submitHandler = e => {
+  submitHandler = (e) => {
     e.preventDefault();
     const type = this.props.match.url.substring(1);
     {
@@ -38,7 +38,7 @@ class RegistrationForm extends Component {
           <form onSubmit={this.submitHandler}>
             {!!errors.length && (
               <div className="alert alert-danger" role="alert">
-                {errors.map(error => (
+                {errors.map((error) => (
                   <p key={error}>{error}</p>
                 ))}
               </div>
@@ -64,7 +64,7 @@ class RegistrationForm extends Component {
             <input
               className="btn btn-success"
               type="submit"
-              value={type.replace(/^\w/, c => c.toUpperCase())}
+              value={type.replace(/^\w/, (c) => c.toUpperCase())}
             />
           </form>
         </div>
@@ -83,14 +83,14 @@ class RegistrationForm extends Component {
     );
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     errors: state.errors.errors,
-    user: state.user
+    user: state.user,
   };
 };
-const mapDispatchToProps = dispatch => ({
-  login: userData => dispatch(login(userData)),
-  signup: userData => dispatch(signup(userData))
+const mapDispatchToProps = (dispatch) => ({
+  login: (userData) => dispatch(login(userData)),
+  signup: (userData) => dispatch(signup(userData)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(RegistrationForm);

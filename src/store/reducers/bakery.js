@@ -1,8 +1,8 @@
-import { SET_CATEGORIES,SET_PRODUCTS} from "../actions/actionTypes";
+import { SET_CATEGORIES, SET_PRODUCTS } from "../actions/actionTypes";
 
 const initialState = {
   categories: [],
-  products: []
+  products: [],
 };
 
 const bakeryReducer = (state = initialState, action) => {
@@ -10,13 +10,13 @@ const bakeryReducer = (state = initialState, action) => {
     case SET_CATEGORIES:
       return {
         ...state,
-        categories: action.payload
+        categories: action.payload,
       };
     case SET_PRODUCTS:
-        return {
-          ...state,
-          products: action.payload
-        };
+      return {
+        ...state,
+        products: action.payload,
+      };
     default:
       return state;
   }

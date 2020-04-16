@@ -1,7 +1,7 @@
 import { createStore, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { checkForExpiredToken } from "./actions";
-import {fetchCategories} from "./actions";
+import { fetchCategories } from "./actions";
 
 import rootReducer from "./reducers";
 
@@ -14,6 +14,5 @@ const store = createStore(
 
 store.dispatch(checkForExpiredToken());
 store.dispatch(fetchCategories());
-
 
 export default store;
