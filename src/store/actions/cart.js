@@ -11,19 +11,10 @@ export const removeItemFromCart = (item) => ({
   payload: item,
 });
 
-export const checkout = (items) => {
-  return async (dispatch) => {
-    try {
-      let response = await instance.post("order/create", items);
-      dispatch({
-        type: CHECKOUT,
-        payload: response,
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-};
+export const checkout = () => ({
+  type: CHECKOUT,
+});
+
 export const fetchOrders = () => {
   return async (dispatch) => {
     const res = await instance.get("orders/");

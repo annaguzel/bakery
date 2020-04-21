@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 // Components
 import CartItem from "./CartItem";
 import { connect } from "react-redux";
+import { checkout } from "../store/actions";
 
 class Cart extends Component {
   Total = () => {
@@ -11,7 +12,7 @@ class Cart extends Component {
       0
     );
     if (total) {
-      return total;
+      return parseFloat(total).toFixed(2);
     }
     return 0;
   };
@@ -37,7 +38,12 @@ class Cart extends Component {
             <h3 className="ml-3" style={{ color: "white" }}>
               Total Number of Items:{this.props.counter}
             </h3>
-            <button className="ml-3 mb-5 btn btn-warning">CHECKOUT</button>
+            <button
+              className="ml-3 mb-5 btn btn-warning"
+              onClick={() => this.props.checkout()}
+            >
+              CHECKOUT
+            </button>
             <br />
             <button className=" ml-3 mb-5 btn btn-warning">
               <Link to="/" className="my-2">
@@ -47,7 +53,9 @@ class Cart extends Component {
           </div>
         ) : (
           <div>
-            <h1 className="thanks">THANK YOU </h1>
+            <h1 className="" style={{ color: "white" }}>
+              THANK YOU
+            </h1>
             <br></br>
             <Link to="/" className="list btn-link back" type="button">
               Click here to go back to products list
@@ -65,5 +73,8 @@ const mapStateToProps = (state) => {
     counter: state.cart.counter,
   };
 };
+const mapDispatchToProps = (dispatch) => ({
+  checkout: () => dispatch(checkout()),
+});
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
