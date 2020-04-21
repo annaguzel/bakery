@@ -14,12 +14,12 @@ import {
 const AuthButton = ({ user, logout }) => {
   let buttons = [
     <li key="loginButton" className="nav-item">
-      <Link to="/login" style={{ color: "#white" }} className="nav-link">
+      <Link style={{ color: "#ffc107" }} to="/login" className="nav-link">
         <FontAwesomeIcon icon={faSignInAlt} /> Login
       </Link>
     </li>,
     <li key="signupButton" className="nav-item">
-      <Link to="/signup" style={{ color: "white" }} className="nav-link">
+      <Link style={{ color: "#ffc107" }} to="/signup" className="nav-link">
         <FontAwesomeIcon icon={faUserPlus} /> Signup
       </Link>
     </li>,
@@ -33,7 +33,7 @@ const AuthButton = ({ user, logout }) => {
         </span>
         <li className="nav-item">
           <span
-            style={{ color: "white" }}
+            style={{ color: "#ffc107" }}
             className="nav-link"
             onClick={logout}
           >

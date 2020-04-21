@@ -19,10 +19,11 @@ class Category extends Component {
 
   render() {
     const productCards = this.props.products.map((product) => (
-      <ProductCard key={product.name + product.id} product={product} />
+      <ProductCard key={product.name + product.id} item={product} />
     ));
     return (
-      <div>
+      <div className="text-center">
+        <h3 style={{ color: "white" }}>Products:</h3>
         <div className="row mx-4">{productCards}</div>
       </div>
     );

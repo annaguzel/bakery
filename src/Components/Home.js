@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 // Components
 import CategoryCard from "./CategoryCard";
+
 import { Jumbotron } from "react-bootstrap";
 
 class Home extends Component {
@@ -20,8 +22,13 @@ class Home extends Component {
           <br />
           <br />
         </Jumbotron>
-        <h3 style={{ color: "white" }}>Categories</h3>
+        <h3 style={{ color: "white" }}>Categories:</h3>
         <div className="row ml-5 mt-5">{categoryCards}</div>
+        <button className=" mx-auto btn btn-warning">
+          <Link style={{ color: "black" }} to="/products/" className="my-2">
+            All Products
+          </Link>
+        </button>
       </div>
     );
   }

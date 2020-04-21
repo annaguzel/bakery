@@ -24,18 +24,17 @@ export const checkForExpiredToken = () => (dispatch) => {
 export const login = (userData) => async (dispatch) => {
   try {
     const res = await instance.post("/login/", userData);
-    const { token } = res.data;
-    dispatch(setCurrentUser(token));
+    const { access } = res.data;
+    dispatch(setCurrentUser(access));
   } catch (error) {
     dispatch(setErrors(error.response.data));
   }
 };
-
 export const signup = (userData) => async (dispatch) => {
   try {
     const res = await instance.post("/register/", userData);
-    const { token } = res.data;
-    dispatch(setCurrentUser(token));
+    const { access } = res.data;
+    dispatch(login(userData));
   } catch (error) {
     dispatch(setErrors(error.response.data));
   }
